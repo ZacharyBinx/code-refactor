@@ -3,8 +3,8 @@
     padding: 0;
     margin: 0;
 }
-
-@media screen and (min-width: 30rem) {
+/* will look into adding media query for accessibility on other devices */
+/* @media screen and (min-width: 30rem) { */
 
 
 body {
@@ -21,7 +21,7 @@ body {
     flex-wrap: wrap-reverse;
     
 }
-
+/* added an order and flex grow. Logo stays left while links follow parent properties */
 .flexcontainer-head h1 {
     font-size: 48px;
     order: 1;
@@ -64,16 +64,17 @@ p {
     background-size: cover;
     background-position: center;
 }
-
+/* changed content to flex container which shows in a column */
 .content {
     flex-shrink: 1;
     flex-direction: column;
     flex-wrap: wrap;
     flex-basis: 0%;
     flex: 75%;
+    margin-left: 20px;
 
 }
-
+/* benefits will sit beside content */
 *.benefits {
     margin-right: 20px;
     padding: 20px;
@@ -84,109 +85,108 @@ p {
     flex-shrink: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #2589bd;
-}
-
-.benefit-lead {
     margin-bottom: 32px;
     color: #ffffff;
 }
 
-.benefit-brand {
-    margin-bottom: 32px;
-    color: #ffffff;
-}
-
-.benefit-cost {
-    margin-bottom: 32px;
-    color: #ffffff;
-}
-
-.benefit-lead h3 {
-    margin-bottom: 10px;
+/* consolidated all benefits h3 tags to one class */
+.benefits h3 {
+    margin-top: 32px;
     text-align: center;
-}
-
-.benefit-brand h3 {
     margin-bottom: 10px;
-    text-align: center;
 }
 
-.benefit-cost h3 {
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.benefit-lead img {
+/* consolidated all benefits img tags to one class */
+.benefits img {
     display: block;
     margin: 10px auto;
     max-width: 150px;
 }
 
-.benefit-brand img {
-    display: block;
-    margin: 10px auto;
-    max-width: 150px;
-}
-
-.benefit-cost img {
-    display: block;
-    margin: 10px auto;
-    max-width: 150px;
-}
-
+/* added flex to each class to contain content */
 .search-engine-optimization {
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     width: 75%;
     margin-bottom: 20px;
     padding: 50px;
-    height: 300px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #0072bb;
     color: #ffffff;
 }
 
+/* added flex to each class to contain content */
 .online-reputation-management {
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     width: 75%;
     margin-bottom: 20px;
     padding: 50px;
-    height: 300px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #0072bb;
     color: #ffffff;
 }
 
+/* added flex to each class to contain content */
 .social-media-marketing {
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     width: 75%;
     margin-bottom: 20px;
     padding: 50px;
-    height: 300px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #0072bb;
     color: #ffffff;
 }
 
+/* ordered the image before text */
 .search-engine-optimization img {
     max-height: 200px;
+    order: 1;
 }
 
-.online-reputation-management img {
-    max-height: 200px;
+/* places text on right side of image */
+.content-1-text {
+    width: 50%;
+    order: 2;
+    margin-bottom: 20px;
 }
-
-.social-media-marketing img {
-    max-height: 200px;
-}
-
 .search-engine-optimization h2 {
     margin-bottom: 20px;
     font-size: 36px;
 }
 
-.online-reputation-management h2 {
+/* ordered image to show after text */
+.online-reputation-management img {
+    max-height: 200px;
+    order: 2;
+}
+
+/* ordered all text on left of image */
+.content-2-text {
+    order: 1;
+    width: 50%;
     margin-bottom: 20px;
+
+}
+.online-reputation-management h2 {
     font-size: 36px;
+}
+
+/* ordered image before text */
+.social-media-marketing img {
+    max-height: 200px;
+    order: 1;
+}
+
+/* ordered text to show on right side of image */
+.content-3-text {
+    width: 50%;
+    order: 2;
+    margin-bottom: 20px;
 }
 
 .social-media-marketing h2 {
@@ -204,5 +204,4 @@ p {
 .footer h2 {
     font-size: 20px;
     clear: both;
-}
 }
